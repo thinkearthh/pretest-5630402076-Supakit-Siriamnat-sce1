@@ -1,0 +1,46 @@
+/*-pretest-
+Mr.Supakit Siri-amnat
+ID:563040207-6 sec1 */
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main()
+{
+    int num[5];
+    int i,j,sum=0;
+    float avg;
+    srand((unsigned)time(0));
+    cout << "Random 5 numbers: ";
+    for (int i=0; i<5; i++)
+    {
+        num[i] = rand()%100+1;
+        cout << num[i] << " ";
+        sum = sum+num[i];
+    }
+    cout << endl;
+
+    int max = num[0];
+    int min = num[0];
+    for (int i=0; i<5; i++)
+    {
+      if (num[i] > max)
+        {
+          max = num[i];
+        }
+      else if (num[i] < min)
+        {
+          min = num[i];
+        }
+    }
+
+    cout << "max = " << max << endl;
+    cout << "min = " << min << endl;
+    avg = sum/5.0;
+    cout << "average = " << avg << endl;
+
+    return 0;
+}
